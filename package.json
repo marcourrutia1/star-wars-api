@@ -1,0 +1,30 @@
+{
+  "name": "star-wars-serverless",
+  "version": "1.0.0",
+  "description": "Reto-Rimac",
+  "author": "Elver Valverde",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "jest --runInBand --coverage"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
+  },
+  "license": "ISC",
+  "dependencies": {
+    "axios": "0.27.2",
+    "dynamoose": "2.8.5",
+    "swagger-jsdoc": "6.2.1",
+    "swagger-ui-express": "4.4.0"
+  },
+  "devDependencies": {
+    "dotenv": "16.0.1",
+    "express": "4.18.1",
+    "jest": "28.1.0",
+    "lodash": "^4.17.21",
+    "nodemon": "2.0.16"
+  }
+}

@@ -1,0 +1,78 @@
+//########
+
+const keysCharacterObject = [
+  "id",
+  "nombre",
+  "altura",
+  "masa",
+  "color_cabello",
+  "color_piel",
+  "color_ojos",
+  "año_nacimiento",
+  "genero",
+];
+
+const roots = [
+  "films",
+  "people",
+  "planets",
+  "species",
+  "starships",
+  "vehicles",
+];
+
+const keysTranslate = [
+  { defaultKey: "name", modifiedKey: "nombre" },
+  { defaultKey: "birth_year", modifiedKey: "año_nacimiento" },
+  { defaultKey: "eye_color", modifiedKey: "color_ojos" },
+  { defaultKey: "gender", modifiedKey: "genero" },
+  { defaultKey: "hair_color", modifiedKey: "color_cabello" },
+  { defaultKey: "height", modifiedKey: "altura" },
+  { defaultKey: "mass", modifiedKey: "masa" },
+  { defaultKey: "skin_color", modifiedKey: "color_piel" },
+  { defaultKey: "homeworld", modifiedKey: "mundo_natal" },
+  { defaultKey: "films", modifiedKey: "peliculas" },
+  { defaultKey: "species", modifiedKey: "especies" },
+  { defaultKey: "starships", modifiedKey: "naves_estelares" },
+  { defaultKey: "vehicles", modifiedKey: "vehiculos" },
+  { defaultKey: "url", modifiedKey: "url" },
+  { defaultKey: "created", modifiedKey: "fecha_creacion" },
+  { defaultKey: "edited", modifiedKey: "fecha_edicion" },
+  { defaultKey: "title", modifiedKey: "titulo" },
+  { defaultKey: "episode_id", modifiedKey: "episodio_id" },
+  { defaultKey: "opening_crawl", modifiedKey: "apertura_rastreo" },
+  { defaultKey: "director", modifiedKey: "director" },
+  { defaultKey: "producer", modifiedKey: "productor" },
+  { defaultKey: "release_date", modifiedKey: "fecha_lanzamiento" },
+  { defaultKey: "characters", modifiedKey: "personajes" },
+  { defaultKey: "planets", modifiedKey: "planetas" },
+  { defaultKey: "model", modifiedKey: "modelo" },
+  { defaultKey: "starship_class", modifiedKey: "clase_de_nave_estelar" },
+  { defaultKey: "manufacturer", modifiedKey: "manufacturer" },
+  { defaultKey: "cost_in_credits", modifiedKey: "costo_en_creditos" },
+  { defaultKey: "length", modifiedKey: "longitud" },
+  { defaultKey: "passengers", modifiedKey: "pasajeros" },
+  {
+    defaultKey: "max_atmosphering_speed",
+    modifiedKey: "velocidad_atmosferica_maxima",
+  },
+  {
+    defaultKey: "hyperdrive_rating",
+    modifiedKey: "calificación_hiperimpulsor",
+  },
+  { defaultKey: "MGLT", modifiedKey: "MGLT" },
+  { defaultKey: "cargo_capacity", modifiedKey: "capacidad_carga" },
+  { defaultKey: "consumables", modifiedKey: "consumibles" },
+  { defaultKey: "pilots", modifiedKey: "pilotos" },
+  { defaultKey: "diameter", modifiedKey: "diametro" },
+  { defaultKey: "rotation_period", modifiedKey: "periodo_de_rotacion" },
+  { defaultKey: "orbital_period", modifiedKey: "periodo_orbital" },
+  { defaultKey: "gravity", modifiedKey: "gravedad" },
+  { defaultKey: "population", modifiedKey: "poblacion" },
+  { defaultKey: "climate", modifiedKey: "climatizado" },
+  { defaultKey: "terrain", modifiedKey: "terreno" },
+  { defaultKey: "surface_water", modifiedKey: "superficie_agua" },
+  { defaultKey: "residents", modifiedKey: "residentes" },
+];
+
+module.exports = { keysTranslate, roots, keysCharacterObject };

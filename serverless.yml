@@ -1,0 +1,60 @@
+service: star-wars-serverless
+
+frameworkVersion: "3"
+
+provider:
+  # deploymentBucket:
+  #   name: star-wars-api
+  name: aws
+  runtime: nodejs12.x
+  stage: ${opt:stage,'dev'}
+  region: ${opt:region, 'us-east-1'}
+  versionFunctions: false
+  environment:
+    DYNAMO_ACCESS_KEY_ID: ${file(${opt:stage, self:provider.stage}.config.yml):DYNAMO_ACCESS_KEY_ID}
+    DYNAMO_SECRET_KEY: ${file(${opt:stage, self:provider.stage}.config.yml):DYNAMO_SECRET_KEY}
+    DYNAMO_REGION: ${file(${opt:stage, self:provider.stage}.config.yml):DYNAMO_REGION}
+    PORT: ${file(${opt:stage, self:provider.stage}.config.yml):PORT}
+    API_URL: ${file(${opt:stage, self:provider.stage}.config.yml):API_URL}
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - S3:*
+        - dynamodb:DescribeTable
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+        - dynamodb:DeleteItem
+        - dynamodb:CreateTable
+      Resource: "*"
+functions:
+  createCharacterDynamo:
+    handler: functions/CreateCharactersDynamo.createCharacterDynamo
+    timeout: 30
+    events:
+      - http:
+          path: v1/star-wars/createCharacterDynamo
+          method: post
+  getAnyStarwarsApi:
+    handler: functions/GetAnyStarwarsApi.getAnyStarwarsApi
+    timeout: 30
+    events:
+      - http:
+          path: v1/star-wars/getAnyStarwarsApi
+          method: get
+  getCharactersDynamo:
+    handler: functions/GetCharactersDynamo.getCharactersDynamo
+    timeout: 30
+    events:
+      - http:
+          path: v1/star-wars/getCharactersDynamo
+          method: get
+  getStarwarsApiPeople:
+    handler: functions/GetStarwarsApiPeople.getStarwarsApiPeople
+    timeout: 30
+    events:
+      - http:
+          path: v1/star-wars/getStarwarsApiPeople
+          method: get

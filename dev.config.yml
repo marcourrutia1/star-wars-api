@@ -1,0 +1,8 @@
+DYNAMO_ACCESS_KEY_ID: <Coloca Acces Key de AWS Aqui>
+DYNAMO_SECRET_KEY: <Coloca Secret Key de AWS Aqui>
+DYNAMO_REGION: <Coloca la region aqui>
+
+PORT : 4000
+
+##API STARWARS
+API_URL: https://swapi.py4e.com/api
